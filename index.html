@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy new year Amelia !</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   <main class="w-full h-screen bg-[#99211F]">
+    <div class="w-full bg-[#99211F] fixed top-0 rotate-180 flex items-end justify-between">
+        <img class="h-[100px]" src="flower.jpeg" alt="">
+        <img class="h-[100px]" src="flower0.jpeg" alt="">
+    </div>
+    <div class="w-full  bg-[#99211F] flex fixed bottom-0 items-end justify-between">
+        <img class="h-[100px]" src="flower.jpeg" alt="">
+        <img class="h-[100px]" src="flower0.jpeg" alt="">
+    </div>
+
+    <div id="typedtext"
+     class="typewriter py-[120px] px-[30px] text-[#fde8ba] text-[14px]">
+        <h1>Người phụ nữ đẹp nhất trong cuộc đời của tôi,Khi mùa xuân về, trái tim tôi lại ngập tràn niềm vui và tình yêu dành cho vợ. Trong dịp năm mới này, tôi muốn gửi tới vợ những lời chúc ấm áp nhất, những lời chúc mừng năm mới tràn đầy ý nghĩa và tình cảm.
+            
+            Chồng yêu thương mong rằng trong năm mới, vợ sẽ luôn được tràn đầy hạnh phúc và thành công. Tôi chúc vợ luôn xinh đẹp như những bông hoa xuân, luôn tỏa sáng và rạng rỡ trong mọi hoàn cảnh. Cùng với đó là sự tự tin và mạnh mẽ để vượt qua mọi thách thức và khó khăn trên con đường cuộc sống.
+            
+            Năm mới sắp bắt đầu, và tôi rất hi vọng rằng chúng ta sẽ cùng nhau xây dựng những kỷ niệm đẹp nhất, chia sẻ những niềm vui và nỗi buồn, và cùng nhau chứng kiến những khoảnh khắc đáng nhớ trong cuộc sống. Chúng ta sẽ vượt qua mọi khó khăn bằng tình yêu và sự hiểu biết, và hạnh phúc sẽ luôn tồn tại trong gđinh của chúng ta.
+            
+            Hãy cùng nhau đón chào năm mới, người vợ thân thương của tôi. Chúng ta sẽ kỷ niệm những khoảnh khắc đẹp nhất và tạo ra những kỷ niệm mới trong mùa xuân này. Yêu vợ nhiều!</h1>
+      </div>
+   </main>
+    
+</body>
+<script >
+    // set up text to print, each item in array is new line
+var aText = new Array(
+"Gửi tới người con gái anh iu thương nhất, Amelia iu dấu!",
+  "Trong khoảnh khắc đầu năm mới, Tết đến xuân về, anh muốn dành cho bé Linh iu dấu những lời chúc ấm áp nhất từ trái tim của anh. Đầu tiên và quan trọng nhất, anh muốn xin lỗi vợ iu về những lỗi lầm và những sai sót của anh trong năm cũ. Anh nhận ra rằng không phải lúc nào mình cũng là một người hoàn hảo, anh nhiều lúc làm bé iu buồn, tủi thân và còn khóc nữa. Nhưng điều quan trọng nhất là anh vẫn yêu thương và muốn ở bên cạnh bé, anh đã học được từ những sai lầm đó và sẽ cố gắng hơn trong tương lai.","<br/>",
+  "Năm mới cũng là một cơ hội để bắt đầu lại, để xây dựng những hạnh phúc mới và tạo ra những kỷ niệm đẹp của chúng mình. Anh muốn gửi tới vợ iu dấu những lời chúc tốt đẹp nhất: chúc em luôn xinh đẹp và rạng rỡ, luôn nở nụ cười trên môi xinh, chúc em bé của anh thành công trong công việc, xứng đáng với những gì em đã cố gắng để giành được nó, và chúc cho gia đình của chúng mình luôn đong đầy niềm vui và hạnh phúc.","<br/>",
+  "Cảm ơn em bé đã luôn ở bên cạnh anh, cảm ơn bé đã luôn quan tâm và chăm sóc anh suốt một năm vừa qua, anh cảm thấy bản thân mình thật hạnh phúc và may mắn khi có em ở bên. Linh iu dấu của anh, chúng mình hãy cùng nhau đi tiếp trên con đường còn giang giở cùng với niềm tin và hy vọng chúng mình sẽ vượt qua mọi thử thách và khó khăn và tận hưởng hạnh phúc nhé bé iu.", "<br/>",
+  "Chúc mừng năm mới 2024, vợ yêu dấu của anh! chúng mình hãy cùng nhau tạo ra những kỷ niệm tuyệt vời nhất trong năm mới này nhé."
+);
+var iSpeed = 30; // time delay of print out
+var iIndex = 0; // start printing array at this posision
+var iArrLength = aText[0].length; // the length of the text array
+var iScrollAt = 20; // start scrolling up at this many lines
+
+var iTextPos = 0; // initialise text position
+var sContents = ""; // initialise contents variable
+var iRow; // initialise current row
+
+function typewriter() {
+  sContents = " ";
+  iRow = Math.max(0, iIndex - iScrollAt);
+  var destination = document.getElementById("typedtext");
+
+  while (iRow < iIndex) {
+    sContents += aText[iRow++] + "<br />";
+  }
+  destination.innerHTML =
+    sContents + aText[iIndex].substring(0, iTextPos) + "_";
+  if (iTextPos++ == iArrLength) {
+    iTextPos = 0;
+    iIndex++;
+    if (iIndex != aText.length) {
+      iArrLength = aText[iIndex].length;
+      setTimeout("typewriter()", 500);
+    }
+  } else {
+    setTimeout("typewriter()", iSpeed);
+  }
+}
+
+typewriter();
+
+</script>
+</html>
